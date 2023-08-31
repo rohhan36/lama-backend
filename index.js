@@ -9,7 +9,7 @@ const User = require("./models/userModel");
 const Transcripts = require("./models/transcriptModel");
 const GeneralConfig = require("./models/generalConfigModel");
 const AdvanceConfig = require("./models/advanceConfigModel");
-
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(
@@ -21,7 +21,13 @@ app.use(
 );
 app.use(express.json());
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(
+  "mongodb+srv://rohhan36:rohhan36@cluster0.25mtnbt.mongodb.net/lama?retryWrites=true&w=majority"
+);
+
+app.listen(PORT, () => {
+  console.log(`Server started on port no ${PORT}`);
+});
 
 app.get("/", (req, res) => {
   res.json("hello world");
