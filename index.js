@@ -12,13 +12,7 @@ const AdvanceConfig = require("./models/advanceConfigModel");
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.use(
-  cors({
-    origin: ["https://lama-backend.vercel.app/"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.DATABASE_URL);
