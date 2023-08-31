@@ -21,9 +21,7 @@ app.use(
 );
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://rohhan36:rohhan36@cluster0.25mtnbt.mongodb.net/lama?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.DATABASE_URL);
 
 app.listen(PORT, () => {
   console.log(`Server started on port no ${PORT}`);
