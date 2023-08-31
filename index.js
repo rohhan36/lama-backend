@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://lama-api-rohhan36.vercel.app/"],
+    origin: ["https://lama-backend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
